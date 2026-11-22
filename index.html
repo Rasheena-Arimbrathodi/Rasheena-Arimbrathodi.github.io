@@ -1,0 +1,1194 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rasheena Arimbrathodi — AI Engineer &amp; Applied Researcher</title>
+  <meta name="description" content="Portfolio of Rasheena Arimbrathodi — AI Engineer & Data Scientist specializing in Enterprise Agentic AI, Hybrid RAG, Multilingual Indic OCR, and Quantized LLM Inference." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+            display: ['"Space Grotesk"', 'system-ui', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            obsidian: {
+              950: '#090B10',
+              900: '#0E121B',
+              850: '#131824',
+              800: '#1A2132',
+            },
+            champagne: {
+              400: '#FBBF24',
+              500: '#F59E0B',
+              600: '#D97706',
+            }
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    /* Architectural Grid & Subtle Glow Effects */
+    .arch-grid-dark {
+      background-size: 44px 44px;
+      background-image:
+        linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    }
+    .arch-grid-light {
+      background-size: 44px 44px;
+      background-image:
+        linear-gradient(to right, rgba(15, 23, 42, 0.045) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(15, 23, 42, 0.045) 1px, transparent 1px);
+    }
+    .glass-card-dark {
+      background: rgba(14, 18, 27, 0.78);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .glass-card-light {
+      background: rgba(255, 255, 255, 0.86);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(15, 23, 42, 0.09);
+    }
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    @keyframes pulse-ring {
+      0% { transform: scale(0.95); opacity: 0.8; }
+      70% { transform: scale(1.35); opacity: 0; }
+      100% { transform: scale(1.35); opacity: 0; }
+    }
+    .status-pulse::before {
+      content: '';
+      position: absolute;
+      inset: -3px;
+      border-radius: 9999px;
+      background: #10B981;
+      animation: pulse-ring 2.2s infinite;
+    }
+    /* Custom scrollbar */
+    ::-webkit-scrollbar { width: 8px; height: 8px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: rgba(148, 163, 184, 0.3); border-radius: 9999px; }
+    ::-webkit-scrollbar-thumb:hover { background: rgba(245, 158, 11, 0.6); }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-900 dark:bg-obsidian-950 dark:text-slate-100 font-sans antialiased selection:bg-amber-500/30 selection:text-amber-200 transition-colors duration-300">
+
+  <!-- Background Architectural Canvas -->
+  <div id="bg-grid" class="fixed inset-0 pointer-events-none arch-grid-dark z-0"></div>
+  <div class="fixed top-0 left-1/2 -translate-x-1/2 w-[900px] h-[420px] bg-gradient-to-b from-amber-500/10 via-sky-500/5 to-transparent blur-3xl pointer-events-none z-0"></div>
+
+  <!-- Toast Notification Banner -->
+  <div id="toast" role="status" aria-live="polite" class="fixed bottom-6 right-6 z-50 translate-y-24 opacity-0 pointer-events-none transition-all duration-300">
+    <div class="flex items-center gap-3 px-4 py-3 rounded-xl bg-slate-900 dark:bg-obsidian-800 text-white border border-amber-500/40 shadow-2xl">
+      <span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
+      <span id="toast-msg" class="text-sm font-medium">Copied to clipboard</span>
+    </div>
+  </div>
+
+  <!-- Top Navigation Bar -->
+  <header class="sticky top-0 z-40 border-b border-slate-200/80 dark:border-white/10 bg-white/80 dark:bg-obsidian-950/80 backdrop-blur-xl">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
+      <a href="#top" class="flex items-center gap-3 group">
+        <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-amber-500 to-amber-600 text-obsidian-950 font-display font-bold text-base flex items-center justify-center shadow-lg shadow-amber-500/20 group-hover:scale-105 transition-transform">
+          RA
+        </div>
+        <div class="flex flex-col">
+          <span class="font-display font-bold text-sm sm:text-base tracking-tight leading-none">Rasheena Arimbrathodi</span>
+          <span class="font-mono text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">AI Systems Architect &amp; Researcher</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-600 dark:text-slate-300">
+        <a href="#architecture" class="hover:text-amber-600 dark:hover:text-amber-400 transition-colors">Systems Sandbox</a>
+        <a href="#experience" class="hover:text-amber-600 dark:hover:text-amber-400 transition-colors">Experience</a>
+        <a href="#repositories" class="hover:text-amber-600 dark:hover:text-amber-400 transition-colors">GitHub &amp; Research</a>
+        <a href="#skills" class="hover:text-amber-600 dark:hover:text-amber-400 transition-colors">Tech Matrix</a>
+        <a href="#education" class="hover:text-amber-600 dark:hover:text-amber-400 transition-colors">Education</a>
+      </nav>
+
+      <!-- Actions: Theme Toggle + Hire CTA -->
+      <div class="flex items-center gap-2.5">
+        <button id="theme-toggle" type="button" aria-label="Toggle Light/Dark Editorial Mode" class="p-2.5 rounded-xl border border-slate-200 dark:border-white/10 bg-slate-100/70 dark:bg-obsidian-850 text-slate-700 dark:text-amber-400 hover:border-amber-500/50 transition-all">
+          <!-- Sun Icon (shown in dark mode) -->
+          <svg id="icon-sun" class="w-4 h-4 block" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41m11.32-11.32l1.41-1.41"></path>
+          </svg>
+          <!-- Moon Icon (shown in light mode) -->
+          <svg id="icon-moon" class="w-4 h-4 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+          </svg>
+        </button>
+
+        <a href="#contact" class="px-4 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-obsidian-950 font-semibold text-xs sm:text-sm shadow-md shadow-amber-500/20 transition-all">
+          Connect
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top" class="relative z-10">
+
+    <!-- 1. HERO SECTION -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-16 lg:pt-20 lg:pb-24">
+      <div class="grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+        <!-- Left Editorial Column -->
+        <div class="lg:col-span-7 space-y-6">
+          <!-- Availability & Visa Badge -->
+          <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 text-emerald-700 dark:text-emerald-300 text-xs font-medium">
+            <span class="relative w-2 h-2 rounded-full bg-emerald-500 status-pulse"></span>
+            <span>Available for AI Engineering Roles &bull; Bengaluru &amp; Dubai (Active UAE Resident Visa &mdash; Ready in 1 Month)</span>
+          </div>
+
+          <div class="space-y-3">
+            <p class="font-mono text-xs sm:text-sm uppercase tracking-widest text-amber-600 dark:text-amber-400">
+              Enterprise Agentic AI &bull; Hybrid RAG &bull; Multilingual LLMs
+            </p>
+            <h1 class="font-display font-bold text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-[1.08]">
+              Rasheena Arimbrathodi
+            </h1>
+            <p class="text-lg sm:text-xl text-slate-600 dark:text-slate-300 font-medium leading-relaxed max-w-2xl">
+              AI Engineer &amp; Data Scientist &mdash; Taking AI from research and experimentation to <span class="text-slate-900 dark:text-white underline decoration-amber-500/70 decoration-2 underline-offset-4">reliable, measurable, production-grade systems</span>.
+            </p>
+          </div>
+
+          <p class="text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-relaxed max-w-2xl">
+            Currently an <strong class="text-slate-800 dark:text-slate-200 font-semibold">AI Decision Science Analyst at Accenture</strong> architecting enterprise Python/FastAPI knowledge-base retrieval and agentic orchestration systems for Microsoft Volume Licensing, with prior AI research experience at <strong class="text-slate-800 dark:text-slate-200 font-semibold">AI4Bharat</strong> scaling 22-language OCR and quantized LLM inference across 14-GPU infrastructure.
+          </p>
+
+          <!-- Primary Action Buttons -->
+          <div class="flex flex-wrap items-center gap-3 pt-2">
+            <a href="#architecture" class="px-5 py-3 rounded-xl bg-amber-500 hover:bg-amber-400 text-obsidian-950 font-semibold text-sm flex items-center gap-2 shadow-lg shadow-amber-500/20 transition-all">
+              <span>Interactive AI Architecture Demo</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M5 12h14m-7-7l7 7-7 7"/></svg>
+            </a>
+
+            <a href="#experience" class="px-5 py-3 rounded-xl border border-slate-300 dark:border-white/15 bg-white dark:bg-obsidian-900 hover:border-amber-500/60 text-sm font-semibold transition-all">
+              Explore Production Systems
+            </a>
+
+            <a href="https://github.com/Rasheena-Arimbrathodi" target="_blank" rel="noopener noreferrer" class="px-4 py-3 rounded-xl border border-slate-300 dark:border-white/15 bg-white dark:bg-obsidian-900 hover:border-sky-400/60 text-sm font-medium flex items-center gap-2 transition-all">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.52-1.33-1.28-1.68-1.28-1.68-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.1 11.1 0 015.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.42-2.69 5.39-5.25 5.68.41.36.78 1.06.78 2.14 0 1.55-.01 2.8-.01 3.18 0 .31.21.68.8.56A11.51 11.51 0 0023.5 12C23.5 5.65 18.35.5 12 .5z"/></svg>
+              <span>GitHub</span>
+            </a>
+
+            <a href="https://www.linkedin.com/in/rasheena-arimbrathodi-30275b3a" target="_blank" rel="noopener noreferrer" class="px-4 py-3 rounded-xl border border-slate-300 dark:border-white/15 bg-white dark:bg-obsidian-900 hover:border-sky-400/60 text-sm font-medium flex items-center gap-2 transition-all">
+              <svg class="w-4 h-4 text-sky-500" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3A2 2 0 0121 5v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h14m-.5 15.5v-5.3a3.26 3.26 0 00-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 011.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 001.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 00-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+              <span>LinkedIn</span>
+            </a>
+
+            <button type="button" onclick="copyText('rasheena.arimbrathodi@gmail.com', 'Email copied: rasheena.arimbrathodi@gmail.com')" class="px-4 py-3 rounded-xl border border-slate-300 dark:border-white/15 bg-white dark:bg-obsidian-900 hover:border-amber-500/60 text-sm font-medium flex items-center gap-2 transition-all">
+              <svg class="w-4 h-4 text-amber-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+              <span>Copy Email</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Right Visual Telemetry Card (Custom Inline SVG Architecture Topology) -->
+        <div class="lg:col-span-5">
+          <div class="rounded-2xl p-6 glass-card-light dark:glass-card-dark shadow-2xl relative overflow-hidden">
+            <div class="flex items-center justify-between pb-4 border-b border-slate-200/80 dark:border-white/10">
+              <div class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-rose-500/80"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-amber-500/80"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-emerald-500/80"></span>
+                <span class="ml-2 font-mono text-xs text-slate-500 dark:text-slate-400">ai_systems_profile.spec</span>
+              </div>
+              <span class="font-mono text-[11px] px-2 py-0.5 rounded bg-amber-500/15 text-amber-600 dark:text-amber-400">PRODUCTION READY</span>
+            </div>
+
+            <!-- Custom Inline SVG Neural & Systems Topology Graphic -->
+            <div class="my-5 rounded-xl bg-slate-900 dark:bg-obsidian-950 p-4 border border-white/10">
+              <svg viewBox="0 0 420 190" class="w-full h-auto" role="img" aria-label="AI Systems Architecture Topology">
+                <defs>
+                  <linearGradient id="edgeGrad" x1="0" y1="0" x2="1" y2="0">
+                    <stop offset="0%" stop-color="#F59E0B" stop-opacity="0.85"/>
+                    <stop offset="50%" stop-color="#38BDF8" stop-opacity="0.85"/>
+                    <stop offset="100%" stop-color="#10B981" stop-opacity="0.9"/>
+                  </linearGradient>
+                </defs>
+                <!-- Connection Lines -->
+                <g stroke="url(#edgeGrad)" stroke-width="1.6" fill="none" opacity="0.75">
+                  <path d="M68 45 L175 35 L285 55 L358 95"/>
+                  <path d="M68 95 L175 95 L285 55"/>
+                  <path d="M68 95 L175 150 L285 135 L358 95"/>
+                  <path d="M68 145 L175 150"/>
+                  <path d="M175 35 L285 135"/>
+                </g>
+                <!-- Left Nodes: Inputs -->
+                <g font-family="JetBrains Mono, monospace" font-size="9" fill="#E2E8F0">
+                  <rect x="12" y="31" width="66" height="26" rx="6" fill="#131824" stroke="#F59E0B" stroke-width="1.2"/>
+                  <text x="45" y="47" text-anchor="middle">Enterprise</text>
+                  <rect x="12" y="82" width="66" height="26" rx="6" fill="#131824" stroke="#38BDF8" stroke-width="1.2"/>
+                  <text x="45" y="98" text-anchor="middle">22-Lang OCR</text>
+                  <rect x="12" y="133" width="66" height="26" rx="6" fill="#131824" stroke="#10B981" stroke-width="1.2"/>
+                  <text x="45" y="149" text-anchor="middle">Documents</text>
+                </g>
+                <!-- Middle Nodes: Core Engines -->
+                <g font-family="JetBrains Mono, monospace" font-size="9" fill="#F8FAFC">
+                  <rect x="135" y="21" width="84" height="28" rx="6" fill="#1A2132" stroke="#F59E0B" stroke-width="1.3"/>
+                  <text x="177" y="38" text-anchor="middle">Hybrid RAG</text>
+                  <rect x="135" y="81" width="84" height="28" rx="6" fill="#1A2132" stroke="#38BDF8" stroke-width="1.3"/>
+                  <text x="177" y="98" text-anchor="middle">INT8/FP16 LLM</text>
+                  <rect x="135" y="136" width="84" height="28" rx="6" fill="#1A2132" stroke="#10B981" stroke-width="1.3"/>
+                  <text x="177" y="153" text-anchor="middle">Agent Router</text>
+                </g>
+                <!-- Right Nodes: Verification & Output -->
+                <g font-family="JetBrains Mono, monospace" font-size="9" fill="#F8FAFC">
+                  <rect x="248" y="41" width="76" height="28" rx="6" fill="#131824" stroke="#38BDF8" stroke-width="1.2"/>
+                  <text x="286" y="58" text-anchor="middle">RAGAS/SVCCA</text>
+                  <rect x="248" y="121" width="76" height="28" rx="6" fill="#131824" stroke="#F59E0B" stroke-width="1.2"/>
+                  <text x="286" y="138" text-anchor="middle">PII Guard</text>
+                  <circle cx="376" cy="95" r="24" fill="#10B981" fill-opacity="0.18" stroke="#10B981" stroke-width="1.6"/>
+                  <text x="376" y="93" text-anchor="middle" fill="#6EE7B7" font-weight="bold">99%+</text>
+                  <text x="376" y="104" text-anchor="middle" fill="#A7F3D0" font-size="8">TRUST</text>
+                </g>
+              </svg>
+            </div>
+
+            <!-- Mini Credential Summary Rows -->
+            <div class="space-y-2.5 font-mono text-xs">
+              <div class="flex items-center justify-between py-1.5 px-3 rounded-lg bg-slate-100 dark:bg-obsidian-850">
+                <span class="text-slate-500 dark:text-slate-400">Current Role</span>
+                <span class="font-semibold text-slate-900 dark:text-white">AI Decision Science Analyst @ Accenture</span>
+              </div>
+              <div class="flex items-center justify-between py-1.5 px-3 rounded-lg bg-slate-100 dark:bg-obsidian-850">
+                <span class="text-slate-500 dark:text-slate-400">Dual Master's</span>
+                <span class="font-semibold text-amber-600 dark:text-amber-400">IIT Madras (9.25) &amp; UoB UK (1st Class)</span>
+              </div>
+              <div class="flex items-center justify-between py-1.5 px-3 rounded-lg bg-slate-100 dark:bg-obsidian-850">
+                <span class="text-slate-500 dark:text-slate-400">Relocation Status</span>
+                <span class="font-semibold text-emerald-600 dark:text-emerald-400">Dubai (UAE Resident Visa) / Bengaluru</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 Key Metrics Strip -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-12">
+        <div class="p-5 rounded-2xl glass-card-light dark:glass-card-dark hover:border-amber-500/40 transition-all">
+          <div class="font-display font-bold text-2xl sm:text-3xl text-amber-600 dark:text-amber-400">4+ Years</div>
+          <div class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-1 font-medium">AI, Data Science &amp; Production Engineering Experience</div>
+        </div>
+        <div class="p-5 rounded-2xl glass-card-light dark:glass-card-dark hover:border-sky-400/40 transition-all">
+          <div class="font-display font-bold text-2xl sm:text-3xl text-sky-600 dark:text-sky-400">9.25 / 10 CGPA</div>
+          <div class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-1 font-medium">MSc Data Science &amp; AI (IIT Madras &amp; Univ. of Birmingham)</div>
+        </div>
+        <div class="p-5 rounded-2xl glass-card-light dark:glass-card-dark hover:border-emerald-400/40 transition-all">
+          <div class="font-display font-bold text-2xl sm:text-3xl text-emerald-600 dark:text-emerald-400">22 Languages</div>
+          <div class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-1 font-medium">Multilingual Indic OCR &amp; LLM Research at AI4Bharat</div>
+        </div>
+        <div class="p-5 rounded-2xl glass-card-light dark:glass-card-dark hover:border-amber-500/40 transition-all">
+          <div class="font-display font-bold text-2xl sm:text-3xl text-amber-600 dark:text-amber-400">99%+ Trust</div>
+          <div class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-1 font-medium">Enterprise RAG, Agentic AI &amp; Automated Validation Pipelines</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. INTERACTIVE LIVE SYSTEMS & ARCHITECTURE EXPLORER -->
+    <section id="architecture" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 reveal">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+        <div>
+          <span class="font-mono text-xs uppercase tracking-widest text-amber-600 dark:text-amber-400">Interactive Blueprint Sandbox</span>
+          <h2 class="font-display font-bold text-3xl sm:text-4xl tracking-tight mt-1">Live Systems &amp; Architecture Explorer</h2>
+        </div>
+        <p class="text-sm text-slate-600 dark:text-slate-400 max-w-md">
+          Inspect the exact production pipelines I have architected—switch blueprints and test live simulated telemetry, quantization trade-offs, and validation outputs.
+        </p>
+      </div>
+
+      <!-- Blueprint Selector Tabs -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-3 mb-6" role="tablist">
+        <button type="button" onclick="selectBlueprint(0)" id="bp-tab-0" class="bp-tab text-left p-4 rounded-2xl border-2 border-amber-500 bg-amber-500/10 transition-all">
+          <div class="font-mono text-[11px] uppercase text-amber-600 dark:text-amber-400">Blueprint 01 &bull; Enterprise RAG</div>
+          <div class="font-display font-bold text-base mt-1">KBDocSkill Hybrid RAG &amp; Agentic Orchestration</div>
+        </button>
+        <button type="button" onclick="selectBlueprint(1)" id="bp-tab-1" class="bp-tab text-left p-4 rounded-2xl border border-slate-200 dark:border-white/10 bg-white dark:bg-obsidian-900 hover:border-amber-500/40 transition-all">
+          <div class="font-mono text-[11px] uppercase text-sky-600 dark:text-sky-400">Blueprint 02 &bull; Multilingual &amp; GPU</div>
+          <div class="font-display font-bold text-base mt-1">22-Language Indic OCR &amp; Quantized LLM Inference</div>
+        </button>
+        <button type="button" onclick="selectBlueprint(2)" id="bp-tab-2" class="bp-tab text-left p-4 rounded-2xl border border-slate-200 dark:border-white/10 bg-white dark:bg-obsidian-900 hover:border-amber-500/40 transition-all">
+          <div class="font-mono text-[11px] uppercase text-emerald-600 dark:text-emerald-400">Blueprint 03 &bull; Document AI</div>
+          <div class="font-display font-bold text-base mt-1">InvoiceFlow &amp; Zolvit Financial Reconciliation</div>
+        </button>
+      </div>
+
+      <!-- Blueprint Interactive Workspace -->
+      <div class="rounded-3xl p-6 sm:p-8 glass-card-light dark:glass-card-dark shadow-xl">
+        <!-- Panel 0: Enterprise Hybrid RAG & Agentic Orchestration -->
+        <div id="bp-panel-0" class="bp-panel space-y-6">
+          <div class="flex flex-wrap items-center justify-between gap-4 pb-5 border-b border-slate-200 dark:border-white/10">
+            <div>
+              <h3 class="font-display font-bold text-xl sm:text-2xl">Enterprise Hybrid RAG &amp; Agentic Orchestration (KBDocSkill Service)</h3>
+              <p class="text-sm text-slate-600 dark:text-slate-400 mt-1">End-to-end Python/FastAPI service on Azure App Service with User-Assigned Managed Identity (secretless auth), SSE streaming, and PII protection.</p>
+            </div>
+            <div class="flex flex-wrap gap-2 font-mono text-xs">
+              <span class="px-2.5 py-1 rounded-lg bg-sky-500/15 text-sky-600 dark:text-sky-300">Azure AI Search</span>
+              <span class="px-2.5 py-1 rounded-lg bg-amber-500/15 text-amber-600 dark:text-amber-300">BM25 + Vector + Rerank</span>
+              <span class="px-2.5 py-1 rounded-lg bg-emerald-500/15 text-emerald-600 dark:text-emerald-300">SSE + PII Guard</span>
+            </div>
+          </div>
+
+          <!-- Pipeline Stages -->
+          <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2.5 font-mono text-xs">
+            <div class="p-3 rounded-xl bg-slate-100 dark:bg-obsidian-850 border border-slate-200 dark:border-white/10">
+              <div class="text-amber-500 font-bold">01. Ingest</div>
+              <div class="mt-1 text-slate-700 dark:text-slate-300">Azure Blob + PII Redaction</div>
+            </div>
+            <div class="p-3 rounded-xl bg-slate-100 dark:bg-obsidian-850 border border-slate-200 dark:border-white/10">
+              <div class="text-sky-400 font-bold">02. Hybrid Search</div>
+              <div class="mt-1 text-slate-700 dark:text-slate-300">Dense Vector + BM25 Lexical</div>
+            </div>
+            <div class="p-3 rounded-xl bg-slate-100 dark:bg-obsidian-850 border border-slate-200 dark:border-white/10">
+              <div class="text-amber-500 font-bold">03. Re-Rank</div>
+              <div class="mt-1 text-slate-700 dark:text-slate-300">Cross-Encoder Precision Top-K</div>
+            </div>
+            <div class="p-3 rounded-xl bg-slate-100 dark:bg-obsidian-850 border border-slate-200 dark:border-white/10">
+              <div class="text-sky-400 font-bold">04. Resilience</div>
+              <div class="mt-1 text-slate-700 dark:text-slate-300">Async Retries + Backoff + Fallback</div>
+            </div>
+            <div class="p-3 rounded-xl bg-slate-100 dark:bg-obsidian-850 border border-slate-200 dark:border-white/10">
+              <div class="text-emerald-400 font-bold">05. Stream</div>
+              <div class="mt-1 text-slate-700 dark:text-slate-300">Agentic Tool Routing via SSE</div>
+            </div>
+            <div class="p-3 rounded-xl bg-slate-100 dark:bg-obsidian-850 border border-slate-200 dark:border-white/10">
+              <div class="text-emerald-400 font-bold">06. Eval</div>
+              <div class="mt-1 text-slate-700 dark:text-slate-300">RAGAS Faithfulness &amp; Grounding</div>
+            </div>
+          </div>
+
+          <!-- Interactive Query Simulator -->
+          <div class="grid lg:grid-cols-12 gap-6 items-start pt-2">
+            <div class="lg:col-span-5 space-y-3">
+              <label class="block font-mono text-xs uppercase text-slate-500 dark:text-slate-400">Select Partner Query to Simulate Pipeline:</label>
+              <div class="space-y-2">
+                <button type="button" onclick="runRagSim(0)" id="rag-q-0" class="rag-q-btn w-full text-left p-3 rounded-xl border border-amber-500 bg-amber-500/10 text-xs sm:text-sm font-medium transition-all">
+                  "Compare Enterprise Agreement vs CSP licensing eligibility for Azure Hybrid Benefit."
+                </button>
+                <button type="button" onclick="runRagSim(1)" id="rag-q-1" class="rag-q-btn w-full text-left p-3 rounded-xl border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-obsidian-900 text-xs sm:text-sm font-medium hover:border-amber-500/50 transition-all">
+                  "Summarize renewal grace-period compliance rules with PII masking enabled."
+                </button>
+                <button type="button" onclick="runRagSim(2)" id="rag-q-2" class="rag-q-btn w-full text-left p-3 rounded-xl border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-obsidian-900 text-xs sm:text-sm font-medium hover:border-amber-500/50 transition-all">
+                  "What fallback triggers when primary Azure OpenAI deployment hits 429 rate limits?"
+                </button>
+              </div>
+            </div>
+
+            <div class="lg:col-span-7 rounded-2xl bg-slate-900 dark:bg-obsidian-950 text-slate-100 p-5 border border-white/10 font-mono text-xs space-y-4">
+              <div class="flex flex-wrap items-center justify-between gap-2 pb-3 border-b border-white/10">
+                <span class="text-emerald-400 font-semibold">&#9679; SSE STREAM TELEMETRY</span>
+                <div class="flex items-center gap-3">
+                  <span>Latency: <strong id="rag-latency" class="text-amber-400">85 ms</strong></span>
+                  <span>Faithfulness: <strong id="rag-faith" class="text-emerald-400">0.98</strong></span>
+                  <span>Auth: <strong class="text-sky-400">Managed Identity</strong></span>
+                </div>
+              </div>
+              <div id="rag-output" class="text-slate-200 leading-relaxed text-xs sm:text-sm font-sans">
+                Hybrid retrieval combined BM25 exact SKU matching with dense vector similarity and cross-encoder re-ranking. Azure Hybrid Benefit applies to active Software Assurance or qualifying subscription licenses under Enterprise Agreement and CSP channels <span class="font-mono text-xs text-amber-400">[source: vl_licensing_guide_2026.pdf §4.2]</span>.
+              </div>
+              <div class="flex flex-wrap gap-2 pt-1">
+                <span id="rag-cite-1" class="px-2.5 py-1 rounded bg-white/5 border border-white/10 text-[11px] text-sky-300">citation: vl_licensing_guide_2026.pdf</span>
+                <span id="rag-cite-2" class="px-2.5 py-1 rounded bg-white/5 border border-white/10 text-[11px] text-emerald-300">pii_status: clean (0 entities leaked)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel 1: 22-Language Indic OCR & Quantized LLM Inference -->
+        <div id="bp-panel-1" class="bp-panel hidden space-y-6">
+          <div class="flex flex-wrap items-center justify-between gap-4 pb-5 border-b border-slate-200 dark:border-white/10">
+            <div>
+              <h3 class="font-display font-bold text-xl sm:text-2xl">22-Language Indic OCR &amp; Quantized LLM Inference (AI4Bharat)</h3>
+              <p class="text-sm text-slate-600 dark:text-slate-400 mt-1">Synthetic dataset generation, Transformer post-OCR correction, 14-GPU BLOOM-7.1B &amp; Gemma 7B/9B deployment via Ollama &amp; NVIDIA NIM, and SVCCA / t-SNE representation analysis.</p>
+            </div>
+            <div class="flex flex-wrap gap-2 font-mono text-xs">
+              <span class="px-2.5 py-1 rounded-lg bg-amber-500/15 text-amber-600 dark:text-amber-300">22 Scheduled Languages</span>
+              <span class="px-2.5 py-1 rounded-lg bg-sky-500/15 text-sky-600 dark:text-sky-300">14-GPU Cluster</span>
+              <span class="px-2.5 py-1 rounded-lg bg-emerald-500/15 text-emerald-600 dark:text-emerald-300">Ollama + NVIDIA NIM</span>
+            </div>
+          </div>
+
+          <!-- Interactive Quantization Precision Switcher -->
+          <div class="grid lg:grid-cols-12 gap-6 items-center">
+            <div class="lg:col-span-5 space-y-4">
+              <div class="font-mono text-xs uppercase text-slate-500 dark:text-slate-400">Interactive Quantization Profiler (Gemma-9B / BLOOM-7.1B):</div>
+              <div class="grid grid-cols-3 gap-2">
+                <button type="button" onclick="setPrecision('FP32')" id="prec-FP32" class="prec-btn py-2.5 px-3 rounded-xl border border-slate-200 dark:border-white/15 bg-slate-100 dark:bg-obsidian-850 font-mono text-xs font-semibold transition-all">FP32 Baseline</button>
+                <button type="button" onclick="setPrecision('FP16')" id="prec-FP16" class="prec-btn py-2.5 px-3 rounded-xl border border-slate-200 dark:border-white/15 bg-slate-100 dark:bg-obsidian-850 font-mono text-xs font-semibold transition-all">FP16 Half</button>
+                <button type="button" onclick="setPrecision('INT8')" id="prec-INT8" class="prec-btn py-2.5 px-3 rounded-xl border-2 border-amber-500 bg-amber-500/15 text-amber-600 dark:text-amber-400 font-mono text-xs font-semibold transition-all">INT8 Quantized</button>
+              </div>
+              <p id="prec-note" class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                <strong>INT8 Quantization (Active):</strong> Cuts model weight footprint by ~75% vs FP32 while delivering 3.4&times; token generation throughput across multi-GPU batch inference with negligible multilingual ChrF++ / CER degradation.
+              </p>
+            </div>
+
+            <div class="lg:col-span-7 grid sm:grid-cols-3 gap-4">
+              <div class="p-4 rounded-2xl bg-slate-900 dark:bg-obsidian-950 text-white border border-white/10">
+                <div class="font-mono text-[11px] text-slate-400">VRAM FOOTPRINT</div>
+                <div id="metric-vram" class="font-display font-bold text-2xl sm:text-3xl text-sky-400 mt-1">9.4 GB</div>
+                <div class="w-full h-2 rounded-full bg-white/10 mt-3 overflow-hidden">
+                  <div id="bar-vram" class="h-full bg-sky-400 transition-all duration-500" style="width: 28%"></div>
+                </div>
+              </div>
+              <div class="p-4 rounded-2xl bg-slate-900 dark:bg-obsidian-950 text-white border border-white/10">
+                <div class="font-mono text-[11px] text-slate-400">CLUSTER THROUGHPUT</div>
+                <div id="metric-throughput" class="font-display font-bold text-2xl sm:text-3xl text-emerald-400 mt-1">1,420 tok/s</div>
+                <div class="w-full h-2 rounded-full bg-white/10 mt-3 overflow-hidden">
+                  <div id="bar-throughput" class="h-full bg-emerald-400 transition-all duration-500" style="width: 92%"></div>
+                </div>
+              </div>
+              <div class="p-4 rounded-2xl bg-slate-900 dark:bg-obsidian-950 text-white border border-white/10">
+                <div class="font-mono text-[11px] text-slate-400">P50 BATCH LATENCY</div>
+                <div id="metric-latency" class="font-display font-bold text-2xl sm:text-3xl text-amber-400 mt-1">45 ms</div>
+                <div class="w-full h-2 rounded-full bg-white/10 mt-3 overflow-hidden">
+                  <div id="bar-latency" class="h-full bg-amber-400 transition-all duration-500" style="width: 26%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 22 Indian Languages Pills -->
+          <div class="pt-2">
+            <div class="font-mono text-xs text-slate-500 dark:text-slate-400 mb-2.5">22 Scheduled Indian Languages Evaluated (OCR + Cross-Lingual SVCCA / t-SNE):</div>
+            <div class="flex flex-wrap gap-1.5 font-mono text-[11px]">
+              <span class="px-2.5 py-1 rounded-md bg-amber-500/15 text-amber-700 dark:text-amber-300">Hindi (hi)</span>
+              <span class="px-2.5 py-1 rounded-md bg-amber-500/15 text-amber-700 dark:text-amber-300">Bengali (bn)</span>
+              <span class="px-2.5 py-1 rounded-md bg-amber-500/15 text-amber-700 dark:text-amber-300">Tamil (ta)</span>
+              <span class="px-2.5 py-1 rounded-md bg-amber-500/15 text-amber-700 dark:text-amber-300">Telugu (te)</span>
+              <span class="px-2.5 py-1 rounded-md bg-amber-500/15 text-amber-700 dark:text-amber-300">Marathi (mr)</span>
+              <span class="px-2.5 py-1 rounded-md bg-amber-500/15 text-amber-700 dark:text-amber-300">Gujarati (gu)</span>
+              <span class="px-2.5 py-1 rounded-md bg-amber-500/15 text-amber-700 dark:text-amber-300">Kannada (kn)</span>
+              <span class="px-2.5 py-1 rounded-md bg-amber-500/15 text-amber-700 dark:text-amber-300">Malayalam (ml)</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-obsidian-850">Odia (or)</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-obsidian-850">Punjabi (pa)</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-obsidian-850">Assamese (as)</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-obsidian-850">Urdu (ur)</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-obsidian-850">Sanskrit (sa)</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-obsidian-850">Nepali (ne)</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-obsidian-850">Sindhi (sd)</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-obsidian-850">Kashmiri (ks)</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-obsidian-850">Konkani (kok)</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-obsidian-850">Maithili (mai)</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-obsidian-850">Dogri (doi)</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-obsidian-850">Manipuri (mni)</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-obsidian-850">Santali (sat)</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-obsidian-850">Bodo (brx)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel 2: Document AI & Automated Financial Reconciliation -->
+        <div id="bp-panel-2" class="bp-panel hidden space-y-6">
+          <div class="flex flex-wrap items-center justify-between gap-4 pb-5 border-b border-slate-200 dark:border-white/10">
+            <div>
+              <h3 class="font-display font-bold text-xl sm:text-2xl">Document AI &amp; Automated Financial Reconciliation (InvoiceFlow &amp; Zolvit)</h3>
+              <p class="text-sm text-slate-600 dark:text-slate-400 mt-1">Dual pdfplumber + regex and OCR + quantized LLM extraction pipelines with automated arithmetic reconciliation achieving 99%+ field-level trust.</p>
+            </div>
+            <div class="flex flex-wrap gap-2 font-mono text-xs">
+              <span class="px-2.5 py-1 rounded-lg bg-emerald-500/15 text-emerald-600 dark:text-emerald-300">99%+ Field Trust</span>
+              <span class="px-2.5 py-1 rounded-lg bg-amber-500/15 text-amber-600 dark:text-amber-300">Pydantic Schema</span>
+              <span class="px-2.5 py-1 rounded-lg bg-sky-500/15 text-sky-600 dark:text-sky-300">Math Audit Engine</span>
+            </div>
+          </div>
+
+          <div class="grid lg:grid-cols-2 gap-6 items-stretch">
+            <div class="rounded-2xl p-5 bg-slate-100 dark:bg-obsidian-900 border border-slate-200 dark:border-white/10 space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="font-mono text-xs font-bold uppercase text-slate-500">Unstructured Invoice Input</span>
+                <span class="font-mono text-[11px] px-2 py-0.5 rounded bg-amber-500/15 text-amber-600 dark:text-amber-400">Multi-Currency (INR / USD / EUR)</span>
+              </div>
+              <pre class="font-mono text-xs text-slate-700 dark:text-slate-300 overflow-x-auto leading-relaxed">BENGALURU LOGISTICS &amp; FREIGHT PVT LTD
+TAX INVOICE | Invoice No: BLF/26-27/0891
+Date: 2026-11-02 | Currency: INR
+
+Express Air Cargo Pallet   | 3 | INR 4,500.00 | INR 13,500.00
+Cold Chain Packaging Kit   | 5 | INR   300.00 | INR  1,500.00
+
+Subtotal: INR 15,000.00
+GST (18%): INR 2,700.00
+Grand Total: INR 17,700.00</pre>
+            </div>
+
+            <div class="rounded-2xl p-5 bg-slate-900 dark:bg-obsidian-950 text-slate-100 border border-white/10 space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="font-mono text-xs font-bold uppercase text-emerald-400">Validated Structured JSON Output</span>
+                <span class="font-mono text-[11px] px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300">is_math_valid: true (1.00)</span>
+              </div>
+              <pre class="font-mono text-xs text-emerald-300 overflow-x-auto leading-relaxed">{
+  "vendor_name": "BENGALURU LOGISTICS & FREIGHT PVT LTD",
+  "invoice_number": "BLF/26-27/0891",
+  "currency": "INR",
+  "line_items_count": 2,
+  "subtotal": 15000.00,
+  "tax_amount": 2700.00,
+  "total_amount": 17700.00,
+  "validation": { "is_math_valid": true, "discrepancy": 0.0 },
+  "confidence_score": 1.0
+}</pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. CAREER & EXPERIENCE TIMELINE -->
+    <section id="experience" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 reveal">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+        <div>
+          <span class="font-mono text-xs uppercase tracking-widest text-amber-600 dark:text-amber-400">Career Trajectory</span>
+          <h2 class="font-display font-bold text-3xl sm:text-4xl tracking-tight mt-1">Production AI &amp; Research Experience</h2>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="flex flex-wrap gap-2">
+          <button type="button" onclick="filterExp('all')" class="exp-filter active px-3.5 py-1.5 rounded-xl text-xs font-semibold bg-amber-500 text-obsidian-950 transition-all">All Roles</button>
+          <button type="button" onclick="filterExp('accenture')" class="exp-filter px-3.5 py-1.5 rounded-xl text-xs font-semibold border border-slate-300 dark:border-white/15 hover:border-amber-500/50 transition-all">Accenture (Enterprise AI)</button>
+          <button type="button" onclick="filterExp('ai4bharat')" class="exp-filter px-3.5 py-1.5 rounded-xl text-xs font-semibold border border-slate-300 dark:border-white/15 hover:border-amber-500/50 transition-all">AI4Bharat (LLM Research)</button>
+          <button type="button" onclick="filterExp('yhills')" class="exp-filter px-3.5 py-1.5 rounded-xl text-xs font-semibold border border-slate-300 dark:border-white/15 hover:border-amber-500/50 transition-all">Data Science &amp; ML</button>
+        </div>
+      </div>
+
+      <div class="space-y-6">
+        <!-- Role 1: Accenture -->
+        <article data-org="accenture" class="exp-card rounded-3xl p-6 sm:p-8 glass-card-light dark:glass-card-dark border-l-4 border-l-amber-500 transition-all">
+          <div class="flex flex-wrap items-start justify-between gap-4 pb-5 border-b border-slate-200 dark:border-white/10">
+            <div>
+              <div class="flex flex-wrap items-center gap-2.5">
+                <h3 class="font-display font-bold text-xl sm:text-2xl">AI Decision Science Analyst &mdash; Agentic AI / Generative AI Practitioner</h3>
+                <span class="px-2.5 py-0.5 rounded-full text-xs font-mono bg-emerald-500/15 text-emerald-600 dark:text-emerald-300">Current</span>
+              </div>
+              <p class="text-sm sm:text-base font-semibold text-amber-600 dark:text-amber-400 mt-1">Accenture &bull; Bengaluru, India</p>
+            </div>
+            <span class="font-mono text-xs px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-obsidian-850 text-slate-600 dark:text-slate-300">July 2025 &ndash; Present</span>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-6 pt-6">
+            <!-- Sub-project A -->
+            <div class="p-5 rounded-2xl bg-slate-100/80 dark:bg-obsidian-900/90 border border-slate-200/80 dark:border-white/5 space-y-2.5">
+              <div class="flex items-center justify-between gap-2">
+                <span class="font-mono text-[11px] uppercase text-sky-600 dark:text-sky-400">Client: Microsoft &bull; Primary Developer</span>
+                <span class="font-mono text-[11px] text-slate-500">Jan 2026 &ndash; Present</span>
+              </div>
+              <h4 class="font-display font-bold text-base sm:text-lg">Microsoft Volume Licensing &mdash; KBDocSkill Service</h4>
+              <ul class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 space-y-1.5 list-disc pl-4 leading-relaxed">
+                <li>Owned end-to-end architecture and deployment of a Python/FastAPI hybrid RAG service using <strong>Azure OpenAI, Azure AI Search, and LlamaIndex</strong>.</li>
+                <li>Combined dense embeddings, vector search, BM25 ranking, and cross-encoder re-ranking with Azure Blob Storage ingestion and PII governance controls.</li>
+                <li>Integrated Server-Sent Events (SSE) agentic tool routing, async retries, exponential backoff, rate-limit handling, and secretless <strong>User-Assigned Managed Identity</strong> on Azure App Service.</li>
+              </ul>
+            </div>
+
+            <!-- Sub-project B -->
+            <div class="p-5 rounded-2xl bg-slate-100/80 dark:bg-obsidian-900/90 border border-slate-200/80 dark:border-white/5 space-y-2.5">
+              <div class="flex items-center justify-between gap-2">
+                <span class="font-mono text-[11px] uppercase text-sky-600 dark:text-sky-400">Client: Microsoft &bull; Cloud Migration</span>
+                <span class="font-mono text-[11px] text-slate-500">Jan 2026 &ndash; Present</span>
+              </div>
+              <h4 class="font-display font-bold text-base sm:text-lg">Competitive Analysis &mdash; RVTools-to-Cloud Mapper</h4>
+              <ul class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 space-y-1.5 list-disc pl-4 leading-relaxed">
+                <li>Built an automated cloud migration assessment engine mapping enterprise VM workloads across Azure and AWS SKUs by instance family, vCPU, memory, and OS.</li>
+                <li>Automated TCO pricing comparisons and designed executive Excel analytical dashboards for partner migration recommendations.</li>
+              </ul>
+            </div>
+
+            <!-- Sub-project C -->
+            <div class="p-5 rounded-2xl bg-slate-100/80 dark:bg-obsidian-900/90 border border-slate-200/80 dark:border-white/5 space-y-2.5">
+              <div class="flex items-center justify-between gap-2">
+                <span class="font-mono text-[11px] uppercase text-amber-600 dark:text-amber-400">Agentic Segmentation</span>
+                <span class="font-mono text-[11px] text-slate-500">Nov 2025 &ndash; Jan 2026</span>
+              </div>
+              <h4 class="font-display font-bold text-base sm:text-lg">Audience Builder Tool</h4>
+              <ul class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 space-y-1.5 list-disc pl-4 leading-relaxed">
+                <li>Engineered agentic audience segmentation workflows using <strong>LangChain, LlamaIndex, and Data Science ADK</strong>.</li>
+                <li>Refined system instructions to reduce hallucinations and diagnosed/optimized service memory utilization and runtime performance.</li>
+              </ul>
+            </div>
+
+            <!-- Sub-project D -->
+            <div class="p-5 rounded-2xl bg-slate-100/80 dark:bg-obsidian-900/90 border border-slate-200/80 dark:border-white/5 space-y-2.5">
+              <div class="flex items-center justify-between gap-2">
+                <span class="font-mono text-[11px] uppercase text-amber-600 dark:text-amber-400">Multi-Persona Agents</span>
+                <span class="font-mono text-[11px] text-slate-500">Jul 2025 &ndash; Nov 2025</span>
+              </div>
+              <h4 class="font-display font-bold text-base sm:text-lg">Retail Media Network Measurement &amp; Reporting</h4>
+              <ul class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 space-y-1.5 list-disc pl-4 leading-relaxed">
+                <li>Built reasoning and tool-calling agent workflows across <strong>8 distinct user personas</strong> paired with a dynamic PDF Generator Agent.</li>
+                <li>Containerized services with Docker and deployed supporting components to Google Cloud.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- Role 2: AI4Bharat -->
+        <article data-org="ai4bharat" class="exp-card rounded-3xl p-6 sm:p-8 glass-card-light dark:glass-card-dark border-l-4 border-l-sky-500 transition-all">
+          <div class="flex flex-wrap items-start justify-between gap-4 pb-5 border-b border-slate-200 dark:border-white/10">
+            <div>
+              <h3 class="font-display font-bold text-xl sm:text-2xl">AI Research Intern</h3>
+              <p class="text-sm sm:text-base font-semibold text-sky-600 dark:text-sky-400 mt-1">AI4Bharat &bull; IIT Madras Research Ecosystem</p>
+            </div>
+            <span class="font-mono text-xs px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-obsidian-850 text-slate-600 dark:text-slate-300">Feb 2025 &ndash; June 2025</span>
+          </div>
+          <ul class="pt-5 text-xs sm:text-sm text-slate-600 dark:text-slate-300 grid md:grid-cols-2 gap-x-8 gap-y-2.5 list-disc pl-4 leading-relaxed">
+            <li>Developed and evaluated OCR models for <strong>22 Indian languages</strong> using synthetic datasets and Transformer-based post-OCR correction models.</li>
+            <li>Built scalable Python and PyTorch evaluation pipelines for multilingual OCR and NLP benchmarking.</li>
+            <li>Deployed and experimented with open-source LLMs including <strong>BLOOM-7.1B and Gemma 7B/9B</strong> across a <strong>14-GPU</strong> environment.</li>
+            <li>Configured <strong>Ollama and NVIDIA NIM</strong> for local open-source LLM inference and high-throughput model serving.</li>
+            <li>Applied <strong>INT8/FP16 quantization</strong> to optimize inference and benchmarked throughput and latency across precision and batch configurations.</li>
+            <li>Analyzed cross-lingual LLM representations using embeddings, <strong>SVCCA, and t-SNE</strong> across eight Indian languages.</li>
+          </ul>
+        </article>
+
+        <!-- Role 3: Yhills & Business Analytics -->
+        <article data-org="yhills" class="exp-card rounded-3xl p-6 sm:p-8 glass-card-light dark:glass-card-dark border-l-4 border-l-emerald-500 transition-all">
+          <div class="flex flex-wrap items-start justify-between gap-4 pb-5 border-b border-slate-200 dark:border-white/10">
+            <div>
+              <h3 class="font-display font-bold text-xl sm:text-2xl">Data Scientist &mdash; Machine Learning &amp; Applied Analytics</h3>
+              <p class="text-sm sm:text-base font-semibold text-emerald-600 dark:text-emerald-400 mt-1">Yhills &amp; IIT Madras Applied Data Science</p>
+            </div>
+            <span class="font-mono text-xs px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-obsidian-850 text-slate-600 dark:text-slate-300">May 2021 &ndash; June 2023</span>
+          </div>
+          <div class="pt-5 grid md:grid-cols-3 gap-4 text-xs sm:text-sm text-slate-600 dark:text-slate-300">
+            <div class="p-4 rounded-2xl bg-slate-100/80 dark:bg-obsidian-900 border border-slate-200/80 dark:border-white/5">
+              <div class="font-display font-bold text-slate-900 dark:text-white mb-1">Apple Fruit Maturity Prediction</div>
+              <p class="leading-relaxed">Predicted Brix maturity values using <strong>XGBoost, Voting Regressor, and Artificial Neural Networks (ANN)</strong> with dimensionality reduction and hyperparameter tuning.</p>
+            </div>
+            <div class="p-4 rounded-2xl bg-slate-100/80 dark:bg-obsidian-900 border border-slate-200/80 dark:border-white/5">
+              <div class="font-display font-bold text-slate-900 dark:text-white mb-1">Question-Type Classification</div>
+              <p class="leading-relaxed">Built an NLP classification pipeline with Bag-of-Words, TF-IDF, and stacked ML models achieving <strong>82.47% classification accuracy</strong>.</p>
+            </div>
+            <div class="p-4 rounded-2xl bg-slate-100/80 dark:bg-obsidian-900 border border-slate-200/80 dark:border-white/5">
+              <div class="font-display font-bold text-slate-900 dark:text-white mb-1">SQL, BigQuery &amp; MLOps Pipelines</div>
+              <p class="leading-relaxed">Engineered reproducible regression, classification, and clustering workflows on SQL and Google BigQuery across healthcare, mobility, and retail datasets.</p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 4. FEATURED GITHUB REPOSITORIES & THESIS RESEARCH -->
+    <section id="repositories" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 reveal">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+        <div>
+          <span class="font-mono text-xs uppercase tracking-widest text-amber-600 dark:text-amber-400">Open-Source &amp; Academic Research</span>
+          <h2 class="font-display font-bold text-3xl sm:text-4xl tracking-tight mt-1">Featured Repositories &amp; Publications</h2>
+        </div>
+        <a href="https://github.com/Rasheena-Arimbrathodi" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-semibold text-amber-600 dark:text-amber-400 hover:underline">
+          <span>View All 29+ Repositories on GitHub</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"/></svg>
+        </a>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <!-- Repo 1: IndicBench -->
+        <div class="rounded-3xl p-6 sm:p-7 glass-card-light dark:glass-card-dark flex flex-col justify-between hover:border-amber-500/50 transition-all">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between gap-2">
+              <span class="font-mono text-xs px-2.5 py-1 rounded-lg bg-sky-500/15 text-sky-600 dark:text-sky-300">Python &bull; PyTorch &bull; Multimodal/NLP</span>
+              <a href="https://github.com/Rasheena-Arimbrathodi" target="_blank" rel="noopener noreferrer" class="font-mono text-xs text-slate-500 hover:text-amber-400 flex items-center gap-1">
+                <span>GitHub</span>
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"/></svg>
+              </a>
+            </div>
+            <h3 class="font-display font-bold text-xl">IndicBench &mdash; Multilingual Indic OCR, Quantized LLM Serving &amp; SVCCA Suite</h3>
+            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+              Research engineering suite supporting all <strong>22 Indian languages</strong> with synthetic OCR noise generation, Transformer post-OCR correction (CER/WER), Ollama &amp; NVIDIA NIM inference clients, INT8/FP16 multi-GPU throughput profiling, and SVCCA / t-SNE representation analysis.
+            </p>
+          </div>
+          <div class="flex flex-wrap gap-1.5 pt-5 font-mono text-[11px] text-slate-500 dark:text-slate-400">
+            <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-obsidian-850">BLOOM-7.1B</span>
+            <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-obsidian-850">Gemma 7B/9B</span>
+            <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-obsidian-850">INT8/FP16</span>
+            <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-obsidian-850">SVCCA &amp; t-SNE</span>
+          </div>
+        </div>
+
+        <!-- Repo 2: EvidenceFlow -->
+        <div class="rounded-3xl p-6 sm:p-7 glass-card-light dark:glass-card-dark flex flex-col justify-between hover:border-amber-500/50 transition-all">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between gap-2">
+              <span class="font-mono text-xs px-2.5 py-1 rounded-lg bg-amber-500/15 text-amber-600 dark:text-amber-300">Agentic AI &bull; FastAPI &bull; RAG</span>
+              <a href="https://github.com/Rasheena-Arimbrathodi/Agent" target="_blank" rel="noopener noreferrer" class="font-mono text-xs text-slate-500 hover:text-amber-400 flex items-center gap-1">
+                <span>GitHub</span>
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"/></svg>
+              </a>
+            </div>
+            <h3 class="font-display font-bold text-xl">EvidenceFlow &mdash; Evidence-Grounded Agentic AI Assistant</h3>
+            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+              Production-structured AI agent combining hybrid <strong>BM25 + TF-IDF</strong> local document retrieval, AST-sandboxed safe tool calling, source-level citation enforcement, FastAPI endpoints, and a 22-test + 5-case automated evaluation benchmark.
+            </p>
+          </div>
+          <div class="flex flex-wrap gap-1.5 pt-5 font-mono text-[11px] text-slate-500 dark:text-slate-400">
+            <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-obsidian-850">Hybrid RAG</span>
+            <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-obsidian-850">Tool Calling</span>
+            <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-obsidian-850">FastAPI</span>
+            <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-obsidian-850">Pytest CI</span>
+          </div>
+        </div>
+
+        <!-- Repo 3: InvoiceFlow -->
+        <div class="rounded-3xl p-6 sm:p-7 glass-card-light dark:glass-card-dark flex flex-col justify-between hover:border-amber-500/50 transition-all">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between gap-2">
+              <span class="font-mono text-xs px-2.5 py-1 rounded-lg bg-emerald-500/15 text-emerald-600 dark:text-emerald-300">Document AI &bull; OCR &bull; Pydantic</span>
+              <a href="https://github.com/Rasheena-Arimbrathodi/Invoice-text-extraction" target="_blank" rel="noopener noreferrer" class="font-mono text-xs text-slate-500 hover:text-amber-400 flex items-center gap-1">
+                <span>GitHub</span>
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"/></svg>
+              </a>
+            </div>
+            <h3 class="font-display font-bold text-xl">InvoiceFlow &mdash; Structured Invoice Extraction &amp; Validation Pipeline</h3>
+            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+              Inspired by production invoice automation at Zolvit India (99%+ field trust): ingests native PDFs, scanned OCR images, and raw text into validated Pydantic schemas with automated line-item, GST/VAT, and grand-total reconciliation.
+            </p>
+          </div>
+          <div class="flex flex-wrap gap-1.5 pt-5 font-mono text-[11px] text-slate-500 dark:text-slate-400">
+            <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-obsidian-850">PDF &amp; Tesseract OCR</span>
+            <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-obsidian-850">Math Audit</span>
+            <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-obsidian-850">Multi-Currency</span>
+            <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-obsidian-850">Docker</span>
+          </div>
+        </div>
+
+        <!-- Research 4: Master's Thesis -->
+        <div class="rounded-3xl p-6 sm:p-7 glass-card-light dark:glass-card-dark flex flex-col justify-between hover:border-amber-500/50 transition-all">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between gap-2">
+              <span class="font-mono text-xs px-2.5 py-1 rounded-lg bg-purple-500/15 text-purple-600 dark:text-purple-300">MSc Thesis &bull; IIT Madras &amp; UoB</span>
+              <span class="font-mono text-xs text-slate-500">Jul 2024 &ndash; Jan 2025</span>
+            </div>
+            <h3 class="font-display font-bold text-xl">Evaluation of Machine Translation for Indian Languages (Llama 3.1)</h3>
+            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+              Benchmarked instruction-tuned <strong>Llama 3.1 (8B, 70B, and 405B)</strong> across Indian language families using <strong>BLEU and ChrF++</strong> on <strong>IN22-Conv and FLORES-200</strong>, identifying cross-lingual quality gaps for low-resource languages.
+            </p>
+          </div>
+          <div class="flex flex-wrap gap-1.5 pt-5 font-mono text-[11px] text-slate-500 dark:text-slate-400">
+            <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-obsidian-850">Llama 3.1 8B/70B/405B</span>
+            <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-obsidian-850">IN22-Conv</span>
+            <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-obsidian-850">FLORES-200</span>
+            <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-obsidian-850">BLEU &amp; ChrF++</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. TECHNICAL STACK MATRIX -->
+    <section id="skills" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 reveal">
+      <div class="mb-8">
+        <span class="font-mono text-xs uppercase tracking-widest text-amber-600 dark:text-amber-400">Capabilities &amp; Tooling</span>
+        <h2 class="font-display font-bold text-3xl sm:text-4xl tracking-tight mt-1">Technical Stack Matrix</h2>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div class="p-6 rounded-3xl glass-card-light dark:glass-card-dark space-y-3">
+          <div class="w-10 h-10 rounded-xl bg-amber-500/15 text-amber-500 flex items-center justify-center font-mono font-bold">01</div>
+          <h3 class="font-display font-bold text-lg">Agentic AI &amp; Orchestration</h3>
+          <div class="flex flex-wrap gap-1.5 text-xs">
+            <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-obsidian-850">LangChain</span>
+            <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-obsidian-850">LlamaIndex</span>
+            <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-obsidian-850">Google ADK</span>
+            <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-obsidian-850">Azure OpenAI</span>
+            <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-obsidian-850">Tool Calling</span>
+            <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-obsidian-850">Multi-Agent Systems</span>
+            <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-obsidian-850">SSE Streaming</span>
+            <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-obsidian-850">Pydantic Validation</span>
+          </div>
+        </div>
+
+        <div class="p-6 rounded-3xl glass-card-light dark:glass-card-dark space-y-3">
+          <div class="w-10 h-10 rounded-xl bg-sky-500/15 text-sky-400 flex items-center justify-center font-mono font-bold">02</div>
+          <h3 class="font-display font-bold text-lg">RAG, Eval &amp; AI Governance</h3>
+          <div class="flex flex-wrap gap-1.5 text-xs">
+            <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-obsidian-850">Azure AI Search</span>
+            <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-obsidian-850">Hybrid BM25 + Vector</span>
+            <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-obsidian-850">Cross-Encoder Re-Ranking</span>
+            <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-obsidian-850">RAGAS Evaluation</span>
+            <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-obsidian-850">Hallucination Mitigation</span>
+            <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-obsidian-850">PII Protection</span>
+            <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-obsidian-850">Managed Identity</span>
+          </div>
+        </div>
+
+        <div class="p-6 rounded-3xl glass-card-light dark:glass-card-dark space-y-3">
+          <div class="w-10 h-10 rounded-xl bg-emerald-500/15 text-emerald-400 flex items-center justify-center font-mono font-bold">03</div>
+          <h3 class="font-display font-bold text-lg">LLMs, Quantization &amp; GPU</h3>
+          <div class="flex flex-wrap gap-1.5 text-xs">
+            <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-obsidian-850">PyTorch</span>
+            <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-obsidian-850">Hugging Face</span>
+            <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-obsidian-850">Llama 3.1</span>
+            <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-obsidian-850">Gemma 7B/9B</span>
+            <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-obsidian-850">BLOOM-7.1B</span>
+            <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-obsidian-850">Ollama &amp; NVIDIA NIM</span>
+            <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-obsidian-850">INT8 / FP16 Quantization</span>
+          </div>
+        </div>
+
+        <div class="p-6 rounded-3xl glass-card-light dark:glass-card-dark space-y-3">
+          <div class="w-10 h-10 rounded-xl bg-purple-500/15 text-purple-400 flex items-center justify-center font-mono font-bold">04</div>
+          <h3 class="font-display font-bold text-lg">Backend, Cloud &amp; Data</h3>
+          <div class="flex flex-wrap gap-1.5 text-xs">
+            <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-obsidian-850">Python &amp; FastAPI</span>
+            <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-obsidian-850">Asyncio &amp; REST</span>
+            <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-obsidian-850">Docker &amp; CI/CD</span>
+            <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-obsidian-850">Microsoft Azure</span>
+            <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-obsidian-850">AWS &amp; Google Cloud</span>
+            <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-obsidian-850">SQL &amp; BigQuery</span>
+            <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-obsidian-850">Pandas &amp; NumPy</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. EDUCATION & DIRECT CONTACT / RECRUITER COMPOSER -->
+    <section id="education" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 reveal">
+      <div class="grid lg:grid-cols-12 gap-8 items-start">
+        <!-- Academic Credentials -->
+        <div class="lg:col-span-5 space-y-5">
+          <div>
+            <span class="font-mono text-xs uppercase tracking-widest text-amber-600 dark:text-amber-400">Academic Foundation</span>
+            <h2 class="font-display font-bold text-3xl tracking-tight mt-1">Education</h2>
+          </div>
+
+          <div class="p-6 rounded-3xl glass-card-light dark:glass-card-dark border-l-4 border-l-amber-500 space-y-2">
+            <div class="font-mono text-xs text-amber-600 dark:text-amber-400">2023 &ndash; 2025 &bull; Dual Master's Degree</div>
+            <h3 class="font-display font-bold text-lg">MSc in Data Science and Artificial Intelligence</h3>
+            <p class="text-sm font-medium text-slate-700 dark:text-slate-300">IIT Madras &amp; University of Birmingham, UK</p>
+            <div class="pt-2 flex flex-wrap gap-2 font-mono text-xs">
+              <span class="px-2.5 py-1 rounded-lg bg-amber-500/15 text-amber-700 dark:text-amber-300 font-semibold">CGPA: 9.25 / 10 (IITM)</span>
+              <span class="px-2.5 py-1 rounded-lg bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 font-semibold">1st Class with Honours (UoB)</span>
+            </div>
+          </div>
+
+          <div class="p-6 rounded-3xl glass-card-light dark:glass-card-dark border-l-4 border-l-sky-500 space-y-2">
+            <div class="font-mono text-xs text-sky-600 dark:text-sky-400">2007 &ndash; 2011 &bull; Undergraduate Engineering</div>
+            <h3 class="font-display font-bold text-lg">B.Tech in Electrical and Electronics Engineering</h3>
+            <p class="text-sm font-medium text-slate-700 dark:text-slate-300">NSS College of Engineering, Palakkad</p>
+            <div class="pt-2">
+              <span class="px-2.5 py-1 rounded-lg bg-sky-500/15 text-sky-700 dark:text-sky-300 font-mono text-xs font-semibold">1st Class with Honours</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Direct Contact & Quick Recruiter Message Generator -->
+        <div id="contact" class="lg:col-span-7 rounded-3xl p-6 sm:p-8 glass-card-light dark:glass-card-dark shadow-xl space-y-6">
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <div>
+              <span class="font-mono text-xs uppercase tracking-widest text-emerald-600 dark:text-emerald-400">Direct Reach &bull; Dubai &amp; Bengaluru</span>
+              <h2 class="font-display font-bold text-2xl sm:text-3xl tracking-tight mt-1">Let's Build Reliable AI Systems</h2>
+            </div>
+            <span class="px-3 py-1 rounded-full text-xs font-mono bg-emerald-500/15 text-emerald-600 dark:text-emerald-300">UAE Resident Visa Active</span>
+          </div>
+
+          <!-- One-Click Copy Contact Chips -->
+          <div class="grid sm:grid-cols-2 gap-3 font-mono text-xs">
+            <button type="button" onclick="copyText('rasheena.arimbrathodi@gmail.com', 'Copied email address')" class="p-3.5 rounded-2xl bg-slate-100 dark:bg-obsidian-900 border border-slate-200 dark:border-white/10 hover:border-amber-500/60 flex items-center justify-between text-left transition-all">
+              <div>
+                <div class="text-slate-500 text-[10px]">EMAIL</div>
+                <div class="font-semibold text-slate-900 dark:text-white mt-0.5">rasheena.arimbrathodi@gmail.com</div>
+              </div>
+              <span class="text-amber-500">Copy</span>
+            </button>
+
+            <button type="button" onclick="copyText('+971 564632230', 'Copied UAE phone number')" class="p-3.5 rounded-2xl bg-slate-100 dark:bg-obsidian-900 border border-slate-200 dark:border-white/10 hover:border-amber-500/60 flex items-center justify-between text-left transition-all">
+              <div>
+                <div class="text-slate-500 text-[10px]">UAE MOBILE (DUBAI)</div>
+                <div class="font-semibold text-slate-900 dark:text-white mt-0.5">+971 564632230</div>
+              </div>
+              <span class="text-amber-500">Copy</span>
+            </button>
+
+            <button type="button" onclick="copyText('+91 8921320133', 'Copied India phone number')" class="p-3.5 rounded-2xl bg-slate-100 dark:bg-obsidian-900 border border-slate-200 dark:border-white/10 hover:border-amber-500/60 flex items-center justify-between text-left transition-all">
+              <div>
+                <div class="text-slate-500 text-[10px]">INDIA MOBILE (BENGALURU)</div>
+                <div class="font-semibold text-slate-900 dark:text-white mt-0.5">+91 8921320133</div>
+              </div>
+              <span class="text-amber-500">Copy</span>
+            </button>
+
+            <a href="https://www.linkedin.com/in/rasheena-arimbrathodi-30275b3a" target="_blank" rel="noopener noreferrer" class="p-3.5 rounded-2xl bg-slate-100 dark:bg-obsidian-900 border border-slate-200 dark:border-white/10 hover:border-sky-400/60 flex items-center justify-between text-left transition-all">
+              <div>
+                <div class="text-slate-500 text-[10px]">LINKEDIN PROFILE</div>
+                <div class="font-semibold text-sky-600 dark:text-sky-400 mt-0.5">/in/rasheena-arimbrathodi-30275b3a</div>
+              </div>
+              <span class="text-sky-400">Open &nearr;</span>
+            </a>
+          </div>
+
+          <!-- Interactive Quick Recruiter Message Generator -->
+          <div class="p-5 rounded-2xl bg-slate-100/90 dark:bg-obsidian-950 border border-slate-200 dark:border-white/10 space-y-3">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <span class="font-mono text-xs uppercase font-semibold text-amber-600 dark:text-amber-400">Quick Recruiter Outreach Composer</span>
+              <div class="flex gap-1.5">
+                <button type="button" onclick="setOutreachTemplate('dubai')" id="tpl-dubai" class="tpl-btn px-2.5 py-1 rounded-lg text-xs font-semibold bg-amber-500 text-obsidian-950">Dubai Role</button>
+                <button type="button" onclick="setOutreachTemplate('bengaluru')" id="tpl-bengaluru" class="tpl-btn px-2.5 py-1 rounded-lg text-xs font-semibold border border-slate-300 dark:border-white/15">Bengaluru / Remote</button>
+              </div>
+            </div>
+            <textarea id="outreach-box" rows="3" class="w-full rounded-xl p-3 bg-white dark:bg-obsidian-900 border border-slate-200 dark:border-white/10 text-xs sm:text-sm text-slate-800 dark:text-slate-200 focus:outline-none focus:border-amber-500">Hi Rasheena, we came across your portfolio and were impressed by your enterprise Agentic AI & Hybrid RAG work at Accenture and multilingual LLM research at AI4Bharat. We'd love to discuss an AI Engineer opportunity in Dubai—are you available for an introductory chat this week?</textarea>
+            <div class="flex flex-wrap items-center gap-3">
+              <button type="button" onclick="copyOutreach()" class="px-4 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-obsidian-950 font-semibold text-xs sm:text-sm transition-all">
+                Copy Message
+              </button>
+              <a id="mailto-link" href="mailto:rasheena.arimbrathodi@gmail.com?subject=AI%20Engineer%20Opportunity%20%E2%80%94%20Rasheena%20Arimbrathodi" class="px-4 py-2 rounded-xl border border-slate-300 dark:border-white/15 hover:border-amber-500/60 font-semibold text-xs sm:text-sm transition-all">
+                Open in Email App &nearr;
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="relative z-10 border-t border-slate-200 dark:border-white/10 py-8 mt-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 dark:text-slate-400 font-mono">
+      <div>&copy; 2026 Rasheena Arimbrathodi &bull; AI Engineer &amp; Applied Researcher</div>
+      <div class="flex items-center gap-5">
+        <a href="https://github.com/Rasheena-Arimbrathodi" target="_blank" rel="noopener noreferrer" class="hover:text-amber-500 transition-colors">GitHub</a>
+        <a href="https://www.linkedin.com/in/rasheena-arimbrathodi-30275b3a" target="_blank" rel="noopener noreferrer" class="hover:text-amber-500 transition-colors">LinkedIn</a>
+        <a href="#top" class="hover:text-amber-500 transition-colors">Back to Top &uarr;</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // 1. Light / Dark Editorial Mode Toggle
+    const htmlEl = document.documentElement;
+    const bgGrid = document.getElementById('bg-grid');
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const iconSun = document.getElementById('icon-sun');
+    const iconMoon = document.getElementById('icon-moon');
+
+    function applyTheme(isDark) {
+      if (isDark) {
+        htmlEl.classList.add('dark');
+        bgGrid.classList.remove('arch-grid-light');
+        bgGrid.classList.add('arch-grid-dark');
+        iconSun.classList.remove('hidden');
+        iconMoon.classList.add('hidden');
+      } else {
+        htmlEl.classList.remove('dark');
+        bgGrid.classList.remove('arch-grid-dark');
+        bgGrid.classList.add('arch-grid-light');
+        iconSun.classList.add('hidden');
+        iconMoon.classList.remove('hidden');
+      }
+    }
+
+    themeToggleBtn.addEventListener('click', () => {
+      const nextDark = !htmlEl.classList.contains('dark');
+      applyTheme(nextDark);
+    });
+
+    // 2. Toast & Clipboard Helper (execCommand fallback for iframe safety)
+    let toastTimer = null;
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      const msgEl = document.getElementById('toast-msg');
+      msgEl.textContent = message;
+      toast.classList.remove('translate-y-24', 'opacity-0');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => {
+        toast.classList.add('translate-y-24', 'opacity-0');
+      }, 2800);
+    }
+
+    function copyText(text, label) {
+      const temp = document.createElement('textarea');
+      temp.value = text;
+      temp.style.position = 'fixed';
+      temp.style.opacity = '0';
+      document.body.appendChild(temp);
+      temp.select();
+      try {
+        document.execCommand('copy');
+        showToast(label || 'Copied to clipboard');
+      } catch (err) {
+        showToast('Copy failed — please select manually');
+      }
+      document.body.removeChild(temp);
+    }
+
+    // 3. Interactive Blueprint Switcher
+    function selectBlueprint(idx) {
+      document.querySelectorAll('.bp-panel').forEach((panel, i) => {
+        panel.classList.toggle('hidden', i !== idx);
+      });
+      document.querySelectorAll('.bp-tab').forEach((tab, i) => {
+        if (i === idx) {
+          tab.classList.remove('border', 'border-slate-200', 'dark:border-white/10', 'bg-white', 'dark:bg-obsidian-900');
+          tab.classList.add('border-2', 'border-amber-500', 'bg-amber-500/10');
+        } else {
+          tab.classList.remove('border-2', 'border-amber-500', 'bg-amber-500/10');
+          tab.classList.add('border', 'border-slate-200', 'dark:border-white/10', 'bg-white', 'dark:bg-obsidian-900');
+        }
+      });
+    }
+
+    // 4. Blueprint 01: Interactive RAG Simulator
+    const ragSamples = [
+      {
+        latency: '85 ms',
+        faithfulness: '0.98',
+        html: 'Hybrid retrieval combined BM25 exact SKU matching with dense vector similarity and cross-encoder re-ranking. Azure Hybrid Benefit applies to active Software Assurance or qualifying subscription licenses under Enterprise Agreement and CSP channels <span class="font-mono text-xs text-amber-400">[source: vl_licensing_guide_2026.pdf §4.2]</span>.',
+        cite1: 'citation: vl_licensing_guide_2026.pdf',
+        cite2: 'pii_status: clean (0 entities leaked)'
+      },
+      {
+        latency: '92 ms',
+        faithfulness: '0.99',
+        html: 'PII protection middleware masked 2 partner contact identifiers prior to LLM context assembly. Renewal orders submitted within the 30-day grace window retain continuous coverage without back-billing penalties <span class="font-mono text-xs text-amber-400">[source: compliance_policy_v4.docx §2.1]</span>.',
+        cite1: 'citation: compliance_policy_v4.docx',
+        cite2: 'pii_status: 2 entities redacted pre-LLM'
+      },
+      {
+        latency: '110 ms',
+        faithfulness: '0.97',
+        html: 'When HTTP 429 rate limits occur on the primary Azure OpenAI endpoint, async tenacity-style exponential backoff (jittered 200ms → 800ms) engages before seamlessly routing to the secondary regional deployment <span class="font-mono text-xs text-amber-400">[source: reliability_runbook.md §3.4]</span>.',
+        cite1: 'citation: reliability_runbook.md',
+        cite2: 'fallback_status: secondary_region_healthy'
+      }
+    ];
+
+    function runRagSim(idx) {
+      const sample = ragSamples[idx];
+      document.getElementById('rag-latency').textContent = sample.latency;
+      document.getElementById('rag-faith').textContent = sample.faithfulness;
+      document.getElementById('rag-output').innerHTML = sample.html;
+      document.getElementById('rag-cite-1').textContent = sample.cite1;
+      document.getElementById('rag-cite-2').textContent = sample.cite2;
+
+      document.querySelectorAll('.rag-q-btn').forEach((btn, i) => {
+        if (i === idx) {
+          btn.classList.remove('border-slate-200', 'dark:border-white/10', 'bg-slate-50', 'dark:bg-obsidian-900');
+          btn.classList.add('border-amber-500', 'bg-amber-500/10');
+        } else {
+          btn.classList.remove('border-amber-500', 'bg-amber-500/10');
+          btn.classList.add('border-slate-200', 'dark:border-white/10', 'bg-slate-50', 'dark:bg-obsidian-900');
+        }
+      });
+    }
+
+    // 5. Blueprint 02: Interactive Quantization Profiler
+    const precMetrics = {
+      FP32: {
+        vram: '36.4 GB',
+        vramPct: '95%',
+        throughput: '415 tok/s',
+        thrPct: '29%',
+        latency: '154 ms',
+        latPct: '90%',
+        note: '<strong>FP32 Full Precision:</strong> Maximum numerical precision baseline requiring ~36.4 GB VRAM for 9B parameters + KV cache, limiting batch concurrency on single-GPU nodes.'
+      },
+      FP16: {
+        vram: '18.2 GB',
+        vramPct: '52%',
+        throughput: '890 tok/s',
+        thrPct: '63%',
+        latency: '72 ms',
+        latPct: '44%',
+        note: '<strong>FP16 Half Precision:</strong> Halves VRAM footprint to 18.2 GB and unlocks Tensor Core acceleration across the 14-GPU cluster with 2.15× throughput speedup.'
+      },
+      INT8: {
+        vram: '9.4 GB',
+        vramPct: '28%',
+        throughput: '1,420 tok/s',
+        thrPct: '92%',
+        latency: '45 ms',
+        latPct: '26%',
+        note: '<strong>INT8 Quantization (Active):</strong> Cuts model weight footprint by ~75% vs FP32 while delivering 3.4× token generation throughput across multi-GPU batch inference with negligible multilingual ChrF++ / CER degradation.'
+      }
+    };
+
+    function setPrecision(mode) {
+      const m = precMetrics[mode];
+      document.getElementById('metric-vram').textContent = m.vram;
+      document.getElementById('bar-vram').style.width = m.vramPct;
+      document.getElementById('metric-throughput').textContent = m.throughput;
+      document.getElementById('bar-throughput').style.width = m.thrPct;
+      document.getElementById('metric-latency').textContent = m.latency;
+      document.getElementById('bar-latency').style.width = m.latPct;
+      document.getElementById('prec-note').innerHTML = m.note;
+
+      ['FP32', 'FP16', 'INT8'].forEach(key => {
+        const btn = document.getElementById('prec-' + key);
+        if (key === mode) {
+          btn.className = 'prec-btn py-2.5 px-3 rounded-xl border-2 border-amber-500 bg-amber-500/15 text-amber-600 dark:text-amber-400 font-mono text-xs font-semibold transition-all';
+        } else {
+          btn.className = 'prec-btn py-2.5 px-3 rounded-xl border border-slate-200 dark:border-white/15 bg-slate-100 dark:bg-obsidian-850 font-mono text-xs font-semibold transition-all';
+        }
+      });
+    }
+
+    // 6. Experience Filter
+    function filterExp(org) {
+      document.querySelectorAll('.exp-card').forEach(card => {
+        const match = org === 'all' || card.dataset.org === org;
+        card.classList.toggle('hidden', !match);
+      });
+      document.querySelectorAll('.exp-filter').forEach(btn => {
+        const isTarget = btn.getAttribute('onclick').includes(`'${org}'`);
+        if (isTarget) {
+          btn.className = 'exp-filter active px-3.5 py-1.5 rounded-xl text-xs font-semibold bg-amber-500 text-obsidian-950 transition-all';
+        } else {
+          btn.className = 'exp-filter px-3.5 py-1.5 rounded-xl text-xs font-semibold border border-slate-300 dark:border-white/15 hover:border-amber-500/50 transition-all';
+        }
+      });
+    }
+
+    // 7. Quick Recruiter Outreach Composer
+    const outreachTemplates = {
+      dubai: "Hi Rasheena, we came across your portfolio and were impressed by your enterprise Agentic AI & Hybrid RAG work at Accenture and multilingual LLM research at AI4Bharat. We'd love to discuss an AI Engineer opportunity in Dubai—are you available for an introductory chat this week?",
+      bengaluru: "Hi Rasheena, your end-to-end work on hybrid RAG, FastAPI agentic systems, and quantized LLM inference stood out to our team. We'd love to connect regarding a Senior AI / ML Engineer role in Bengaluru—let us know a convenient time to speak."
+    };
+
+    function setOutreachTemplate(type) {
+      const box = document.getElementById('outreach-box');
+      box.value = outreachTemplates[type];
+      const mailto = document.getElementById('mailto-link');
+      mailto.href = `mailto:rasheena.arimbrathodi@gmail.com?subject=${encodeURIComponent('AI Engineer Opportunity — Rasheena Arimbrathodi')}&body=${encodeURIComponent(box.value)}`;
+
+      ['dubai', 'bengaluru'].forEach(k => {
+        const btn = document.getElementById('tpl-' + k);
+        if (k === type) {
+          btn.className = 'tpl-btn px-2.5 py-1 rounded-lg text-xs font-semibold bg-amber-500 text-obsidian-950';
+        } else {
+          btn.className = 'tpl-btn px-2.5 py-1 rounded-lg text-xs font-semibold border border-slate-300 dark:border-white/15';
+        }
+      });
+    }
+
+    function copyOutreach() {
+      const val = document.getElementById('outreach-box').value;
+      copyText(val, 'Recruiter message copied to clipboard');
+    }
+
+    // 8. Scroll-Reveal Intersection Observer
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
